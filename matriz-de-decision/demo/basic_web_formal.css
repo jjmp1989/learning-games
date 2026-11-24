@@ -1,0 +1,89 @@
+/* #region Custom variables */
+
+:root {
+  /* #region - Colors */
+  /*
+    For Brigtness and Darkness the dark and light tones are +-11 respect to medium.
+    For the rest of them +-13.
+  */
+  /* Brand Colors*/
+  --color-primary-max-light: rgb(255, 255, 255);
+  --color-primary-lighter: rgb(250, 250, 250);
+  --color-primary-light: rgb(242, 242, 242);
+  --color-primary-medium: rgb(235, 235, 235);
+  --color-primary-dark: rgb(228, 228, 228);
+  --color-primary-darker: rgb(220, 220, 220);
+  --color-primary-max-dark: rgb(215, 215, 215);
+  --color-secondary-max-light: rgb(37, 54, 80);
+  --color-secondary-lighter: rgb(30, 42, 69);
+  --color-secondary-light: rgb(23, 32, 59);
+  --color-secondary-medium: rgb(17, 24, 50);
+  --color-secondary-dark: rgb(15, 21, 42);
+  --color-secondary-darker: rgb(13, 17, 34);
+  --color-secondary-max-dark: rgb(12, 14, 30);
+  --color-highlight-max-light: rgb(241, 185, 69);
+  --color-highlight-lighter: rgb(234, 180, 66);
+  --color-highlight-light: rgb(227, 175, 63);
+  --color-highlight-medium: rgb(220, 170, 60);
+  --color-highlight-dark: rgb(213, 165, 57);
+  --color-highlight-darker: rgb(206, 160, 54);
+  --color-highlight-max-dark: rgb(199, 155, 51);
+  /* White and Black Colors */
+  --color-brightness-light: rgb(253, 253, 253);
+  --color-brightness-medium: rgb(242, 242, 242);
+  --color-brightness-dark: rgb(231, 231, 231);
+  --color-darkness-light: rgb(24, 24, 24);
+  --color-darkness-medium: rgb(13, 13, 13);
+  --color-darkness-dark: rgb(2, 2, 2);
+  /* Action Colors */
+  --color-success-light: rgb(195, 250, 195);
+  --color-success-medium: rgb(145, 230, 145);
+  --color-success-dark: rgb(95, 210, 95);
+  --color-warning-light: rgb(255, 200, 100);
+  --color-warning-medium: rgb(235, 170, 65);
+  --color-warning-dark: rgb(215, 140, 30);
+  --color-danger-light: rgb(255, 170, 170);
+  --color-danger-medium: rgb(235, 130, 130);
+  --color-danger-dark: rgb(215, 90, 90);
+  --color-info-light: rgb(235, 245, 250);
+  --color-info-medium: rgb(195, 205, 230);
+  --color-info-dark: rgb(155, 165, 210);
+
+  /* #endregion - Colors */
+
+  /* #region - fonts */
+
+  --font-family-primary: 'Source Sans 3', sans-serif !important;
+
+  --font-family-regular: 'source Sans 3', sans-serif !important;
+  --font-family-heading : 'Libre Baskerville', sans-serif !important;
+  --font-family-title : 'Playfair Display', sans-serif !important;
+  --font-family-monospace:
+      ui-monospace,
+      Menlo,
+      Monaco,
+      "Cascadia Mono",
+      "Segoe UI Mono",
+      "Roboto Mono",
+      "Oxygen Mono",
+      "Ubuntu Monospace",
+      "Source Code Pro",
+      "Fira Mono",
+      "Droid Sans Mono",
+      "Courier New",
+      monospace,
+      "Apple Color Emoji",
+      "Segoe UI Emoji",
+      "Segoe UI Symbol",
+      "Noto Color Emoji";
+  
+  --body-font-size: 1rem;
+  --body-font-weight: 400;
+  --body-font-line-height: 1.5;
+  --body-font-color: var(--color-darkness-medium);
+
+}
+
+/* #endregion - fonts */
+
+/* #endregion Custom variables */

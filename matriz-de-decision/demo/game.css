@@ -1,0 +1,403 @@
+.decision-page {
+  margin: 0;
+}
+
+.decision-game {
+  --game-ink: var(--color-secondary-medium);
+  --game-muted: var(--color-secondary-max-light);
+  --game-gold: var(--color-highlight-light);
+  --game-paper: var(--color-primary-max-light);
+  --game-canvas: var(--color-primary-lighter);
+  --game-rule: var(--color-primary-darker);
+
+  min-height: 100vh;
+  background: var(--game-canvas);
+  color: var(--game-ink);
+  font: var(--body-font-weight) var(--body-font-size) / var(--body-font-line-height) var(--font-family-primary);
+}
+
+.decision-game *,
+.decision-game *::before,
+.decision-game *::after {
+  box-sizing: border-box;
+}
+
+.decision-game [hidden] {
+  display: none;
+}
+
+.decision-game :where(h1, h2, p, figure) {
+  margin: 0;
+}
+
+.decision-game :where(button, a):focus-visible {
+  outline: 3px solid var(--color-secondary-max-light);
+  outline-offset: 3px;
+}
+
+.decision-game .game-header {
+  border-bottom: 5px solid var(--game-gold);
+  background: linear-gradient(115deg, var(--color-secondary-medium), var(--color-secondary-max-light));
+  color: var(--game-paper);
+}
+
+.decision-game :where(.header-inner, .game-content) {
+  width: min(100% - 3rem, 76rem);
+  margin-inline: auto;
+}
+
+.decision-game .header-inner {
+  padding-block: clamp(2.25rem, 5vw, 4.25rem);
+}
+
+.decision-game .course {
+  color: var(--game-gold);
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.decision-game h1 {
+  margin-block: 0.5rem 0.65rem;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(2.25rem, 5vw, 4.25rem);
+  font-weight: 700;
+  line-height: 1.08;
+}
+
+.decision-game .game-intro {
+  max-width: 46rem;
+  color: var(--color-primary-medium);
+  font-size: clamp(1rem, 2.4vw, 1.15rem);
+}
+
+.decision-game .game-content {
+  padding-block: 1.75rem 3rem;
+}
+
+.decision-game .progress-strip {
+  display: grid;
+  grid-template-columns: max-content 1fr max-content;
+  align-items: center;
+  gap: clamp(0.65rem, 3vw, 2rem);
+  margin-bottom: 1.5rem;
+  padding: 0.75rem clamp(0.8rem, 2vw, 1.25rem);
+  border: 1px solid var(--game-rule);
+  border-radius: 0.7rem;
+  background: var(--game-paper);
+}
+
+.decision-game .progress-summary,
+.decision-game .clock {
+  display: grid;
+  line-height: 1.25;
+}
+
+.decision-game :where(.progress-summary, .clock) span {
+  color: var(--game-muted);
+  font-size: 0.875rem;
+}
+
+.decision-game progress {
+  appearance: none;
+  width: 100%;
+  height: 0.55rem;
+  border: 0;
+  border-radius: 1rem;
+  background: var(--color-primary-dark);
+  color: var(--game-gold);
+  accent-color: var(--game-gold);
+  overflow: hidden;
+}
+
+.decision-game progress::-webkit-progress-bar {
+  border-radius: inherit;
+  background: var(--color-primary-dark);
+}
+
+.decision-game progress::-webkit-progress-value {
+  border-radius: inherit;
+  background: var(--game-gold);
+}
+
+.decision-game progress::-moz-progress-bar {
+  border-radius: inherit;
+  background: var(--game-gold);
+}
+
+.decision-game .clock {
+  text-align: right;
+}
+
+.decision-game .clock strong {
+  font-family: var(--font-family-monospace);
+  font-size: 1.25rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.decision-game .clock-urgent {
+  color: var(--game-ink);
+  background: var(--color-danger-light);
+  border-radius: 0.25rem;
+  padding-inline: 0.25rem;
+}
+
+.decision-game .game-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(0.5rem, 2vw, 1.25rem);
+  align-items: start;
+}
+
+.decision-game .panel {
+  min-width: 0;
+  padding: clamp(0.75rem, 2vw, 1.35rem);
+  border: 1px solid var(--game-rule);
+  border-radius: 0.7rem;
+  background: var(--game-paper);
+}
+
+.decision-game h2 {
+  font-family: "Libre Baskerville", Georgia, serif;
+  font-size: clamp(1.05rem, 2vw, 1.45rem);
+  line-height: 1.2;
+}
+
+.decision-game .panel-note {
+  margin-top: 0.3rem;
+  color: var(--game-muted);
+  font-size: 0.875rem;
+}
+
+.decision-game .table-wrap {
+  margin-top: 1rem;
+  overflow-x: auto;
+  border: 1px solid var(--game-rule);
+  border-radius: 0.45rem;
+}
+
+.decision-game table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  text-align: center;
+  font-size: clamp(0.875rem, 1.3vw, 1rem);
+}
+
+.decision-game :where(th, td) {
+  padding: 0.7rem clamp(0.15rem, 0.85vw, 0.75rem);
+  overflow-wrap: anywhere;
+}
+
+.decision-game thead th {
+  background: var(--game-ink);
+  color: var(--game-paper);
+  line-height: 1.2;
+}
+
+.decision-game tr > :first-child {
+  width: 32%;
+  text-align: left;
+}
+
+.decision-game tbody tr + tr {
+  border-top: 1px solid var(--game-rule);
+}
+
+.decision-game tbody tr:nth-child(odd) {
+  background: var(--game-canvas);
+}
+
+.decision-game tbody tr.selected-row {
+  background: var(--color-success-light);
+}
+
+.decision-game td {
+  font-variant-numeric: tabular-nums;
+}
+
+.decision-game td.negative {
+  text-decoration: underline;
+  text-decoration-color: var(--color-danger-dark);
+  text-underline-offset: 0.2em;
+}
+
+.decision-game .criterion {
+  display: inline-block;
+  margin-top: 0.85rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.25rem;
+  background: var(--color-info-light);
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.decision-game .question {
+  margin-block: 0.7rem 1rem;
+}
+
+.decision-game .choices:not([hidden]) {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.decision-game button {
+  min-height: 2.75rem;
+  padding: 0.5rem 0.7rem;
+  border: 1px solid var(--game-rule);
+  border-radius: 0.4rem;
+  background: var(--game-canvas);
+  color: var(--game-ink);
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.decision-game .choices button {
+  text-align: left;
+}
+
+.decision-game button:hover {
+  border-color: var(--game-ink);
+  background: var(--color-info-light);
+}
+
+.decision-game .action-button {
+  border-color: var(--game-gold);
+  background: var(--game-gold);
+}
+
+.decision-game .action-button:hover {
+  border-color: var(--color-highlight-darker);
+  background: var(--color-highlight-darker);
+}
+
+.decision-game .building-panel {
+  grid-column: 3;
+  grid-row: 1;
+  padding: 0;
+  overflow: hidden;
+}
+
+.decision-game .building-scene {
+  display: grid;
+  align-items: end;
+  justify-items: center;
+  aspect-ratio: 1 / 1;
+  background-color: var(--color-info-light);
+  background-image: url("assets/landscape.webp");
+  background-position: center;
+  background-size: cover;
+}
+
+.decision-game .building-scene img {
+  display: block;
+  width: 84%;
+  height: auto;
+  margin-bottom: 9%;
+}
+
+.decision-game figcaption {
+  display: grid;
+  gap: 0.15rem;
+  padding: 0.75rem 0.85rem;
+  line-height: 1.2;
+}
+
+.decision-game figcaption span {
+  color: var(--game-muted);
+  font-size: 0.875rem;
+}
+
+.decision-game .feedback {
+  grid-column: 1 / -1;
+}
+
+.decision-game .completion {
+  margin-top: 1rem;
+}
+
+.decision-game .feedback[data-result="correct"] {
+  border-inline-start: 0.3rem solid var(--color-success-dark);
+}
+
+.decision-game .feedback[data-result="retry"] {
+  border-inline-start: 0.3rem solid var(--color-warning-dark);
+}
+
+.decision-game :where(.feedback, .completion) p {
+  margin-top: 0.55rem;
+}
+
+.decision-game .feedback ul {
+  padding-inline-start: 1.25rem;
+}
+
+.decision-game .best-score {
+  font-weight: 700;
+}
+
+.decision-game :where(.feedback, .completion) .action-button {
+  margin-top: 0.8rem;
+}
+
+.decision-game .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+@media (max-width: 760px) {
+  .decision-game :where(.header-inner, .game-content) {
+    width: min(100% - 1.5rem, 76rem);
+  }
+
+  .decision-game .game-layout {
+    grid-template-columns: minmax(0, 2.15fr) minmax(0, 1fr) minmax(0, 0.9fr);
+  }
+
+  .decision-game button {
+    padding-inline: 0.35rem;
+  }
+
+  .decision-game :where(th, td, button) {
+    hyphens: auto;
+  }
+}
+
+@media (max-width: 576px) {
+  .decision-game .game-layout {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .decision-game .building-panel {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .decision-game .progress-strip {
+    position: sticky;
+    z-index: 1;
+    top: 0;
+  }
+
+  .decision-game .matrix-panel {
+    scroll-margin-top: 5rem;
+  }
+
+  .decision-game .building-scene {
+    aspect-ratio: 4 / 3;
+  }
+
+  .decision-game .building-scene img {
+    width: min(68%, 15rem);
+    margin-bottom: 6%;
+  }
+}

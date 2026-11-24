@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Decisiones de inversión</title>
+  <link rel="stylesheet" href="basic_web_formal.css">
+  <link rel="stylesheet" href="game.css">
+  <script defer src="questions.js"></script>
+  <script defer src="criteria.js"></script>
+  <script defer src="game.js"></script>
+</head>
+<body class="decision-page">
+  <main class="decision-game" data-decision-game>
+    <header class="game-header">
+      <div class="header-inner">
+        <p class="course">Economía y emprendimiento · 4.º ESO</p>
+        <h1>Decisiones de inversión</h1>
+        <p class="game-intro">Dirige una empresa de corretaje. Decide cómo invertir ante los cambios de tipos del banco central y lleva tu sede del barrio al rascacielos.</p>
+      </div>
+    </header>
+
+    <div class="game-content">
+      <div class="progress-strip">
+        <div class="progress-summary">
+          <strong data-progress-text></strong>
+          <span data-round></span>
+        </div>
+        <progress data-progress aria-label="Niveles superados"></progress>
+        <div class="clock">
+          <span>Tiempo restante</span>
+          <strong data-time role="timer"></strong>
+        </div>
+      </div>
+
+      <div class="game-layout">
+        <section class="panel matrix-panel" aria-labelledby="matrix-title">
+          <h2 id="matrix-title">Matriz de resultados</h2>
+          <p class="panel-note">Beneficios o pérdidas simulados en miles de euros.</p>
+          <div class="table-wrap">
+            <table aria-labelledby="matrix-title">
+              <thead><tr data-scenarios></tr></thead>
+              <tbody data-results></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="panel strategy-panel" aria-labelledby="strategy-title">
+          <h2 id="strategy-title">Elige la estrategia</h2>
+          <p class="criterion" data-criterion></p>
+          <p class="question" data-question></p>
+          <button class="action-button" type="button" data-action>Empezar ronda</button>
+          <div class="choices" data-choices aria-label="Estrategias" role="group" hidden></div>
+        </section>
+
+        <section class="feedback panel" data-feedback aria-labelledby="feedback-title" hidden>
+          <h2 id="feedback-title" tabindex="-1"></h2>
+          <p data-feedback-message></p>
+          <ul data-calculations hidden></ul>
+          <button class="action-button" type="button" data-feedback-action></button>
+        </section>
+
+        <figure class="panel building-panel">
+          <div class="building-scene">
+            <img data-building width="512" height="512" alt="">
+          </div>
+          <figcaption>
+            <span data-building-level></span>
+            <strong data-building-name></strong>
+          </figcaption>
+        </figure>
+      </div>
+
+      <div class="completion panel" data-completion hidden>
+        <h2 tabindex="-1" data-completion-title>¡Has llegado al rascacielos!</h2>
+        <p>Has superado todas las rondas. ¿Qué cambia al aplicar dos criterios distintos a una misma matriz?</p>
+        <button class="action-button" type="button" data-restart>Volver a jugar</button>
+      </div>
+
+      <p class="sr-only" data-timer-warning role="status"></p>
+      <noscript>Activa JavaScript para jugar.</noscript>
+    </div>
+  </main>
+</body>
+</html>
